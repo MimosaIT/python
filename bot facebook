@@ -1,0 +1,17 @@
+from bs4 import BeautifulSoup
+
+import requests
+print("start show fb post date.........")
+
+facebook_bot = requests.get("https://mbasic.facebook.com/photo?fbid=248707393283738&set=a.199721678182310").text
+soup = BeautifulSoup(facebook_bot , "lxml")
+
+#date = soup.find("div",class_="_2vja mfss fcg").text
+date = soup.abbr.text
+print(date)
+
+
+
+
+
+
